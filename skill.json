@@ -1,0 +1,33 @@
+{
+  "$schema_version": 1,
+  "name": "srs-ag12-semantic-review",
+  "version": "1.1.0",
+  "node_id": "AG-12",
+  "kind": "agent",
+  "summary": "Agent Node AG-12 (Bước 22 SOP viết SRS): rà soát SRS với góc nhìn dev mới, tìm mơ hồ, mâu thuẫn, yêu cầu không kiểm thử được, lệch SRS–prototype và thiếu dữ kiện; chấm mức độ, kết luận ĐẠT/KHÔNG ĐẠT, chỉ chặn với Blocker.",
+  "repository": "https://github.com/HaNguyen1409/srs-ag12-semantic-review",
+  "license": "MIT",
+  "interface": {
+    "contract": "SKILL.md — đầu vào/đầu ra là tài liệu Markdown/JSON mô tả trong skill; không gọi trực tiếp skill khác",
+    "output_artifact": null,
+    "sop_steps": [
+      {
+        "step": "22",
+        "title": "Rà soát chất lượng ngữ nghĩa",
+        "type": "Agent",
+        "receives_from": "B20, B21, B13",
+        "sends_to": "B23 (đạt) / B18, B19, B20 (Blocker)"
+      }
+    ]
+  },
+  "upstream": {
+    "srs-ag08-prototype-builder": "^1.1.0"
+  },
+  "downstream": [
+    "srs-ag10-functional-spec",
+    "srs-ag14-data-design",
+    "srs-ag11-nfr-spec"
+  ],
+  "orchestrates": {},
+  "runtime": null
+}
